@@ -12,7 +12,7 @@
     %th Registered at
   - students.each do |student|
     %tr
-      %td= link_to student.full_name, student_path(student)
+      %td= student.full_name
       %td= student.email
       %td= student.country_name
       %td= student.created_at.to_date.to_s(:long)
