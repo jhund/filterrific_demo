@@ -1,0 +1,34 @@
+# Run this script on the console to generate demo data
+
+# Create countries
+country_names = [
+  'United States',
+  'Canada',
+  'Australia',
+  'South Africa',
+  'New Zealand',
+  'Puerto Rico',
+  'Ireland',
+  'United Kingdom',
+]
+countries = country_names.map do |country_name|
+  Country.create(:name => country_name)
+end
+
+# Create students
+1000.times.each do
+  first_name = Random.first_name
+  last_name = Random.last_name
+  email = first_name.first.downcase + last_name.downcase + '@' + Random.email.split('@').last
+  country = countries.sample
+  Student.create(
+    {
+      :first_name => first_name,
+      :last_name => last_name,
+      :email => email,
+      :country_id => country.id,
+      :created_at => Random.date(-500..0),
+    },
+    :without_protection => true
+  )
+end

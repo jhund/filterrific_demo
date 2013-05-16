@@ -1,0 +1,30 @@
+.page-header
+  .pull-right= link_to 'Home', root_path
+  %h1 Students
+
+.well.well-small
+  = form_for @filterrific do |f|
+    .row
+      .span3
+        %label Search
+        = f.text_field :search_query,
+                       :class => 'filterrific-periodically-observed'
+      .span3
+        %label Country
+        = f.select :with_country_id,
+                   Country.options_for_select,
+                   { :include_blank => '- Any -' }
+      .span2
+        %label Registered after
+        = f.text_field :with_created_at_gte,
+                       :class => 'js-datepicker span2'
+      .span3
+        %label Sorted by
+        = f.select :sorted_by, Student2.options_for_sorted_by
+
+#results
+  = render :partial => 'students/list',
+           :locals => { :students => @students }
+
+:javascript
+  $('.js-datepicker').datepicker()

@@ -1,0 +1,18 @@
+/*
+
+We don't use sprocket's manifest format for CSS, as per recommendation
+from https://github.com/thomas-mcdonald/bootstrap-sass:
+
+Don't use Sproket's //= require directives for SASS files, because they're
+horrible and will kill your cat.
+
+Instead we include CSS files using sass' @import.
+
+*/
+
+
+/* Pull in bootstrap */
+@import 'bootstrap';
+
+/* Import any app style files below this line */
+@import 'bootstrap-datepicker'
