@@ -20,7 +20,7 @@
                        :class => 'js-datepicker span2'
       .span3
         %label Sorted by
-        = f.select :sorted_by, Student2.options_for_sorted_by
+        = f.select :sorted_by, Student.options_for_sorted_by
 
 #results
   = render :partial => 'students/list',
