@@ -17,8 +17,8 @@ end
 
 # Create students
 1000.times.each do
-  first_name = Random.first_name
-  last_name = Random.last_name
+  first_name = Random.firstname
+  last_name = Random.lastname
   email = first_name.first.downcase + last_name.downcase + '@' + Random.email.split('@').last
   country = countries.sample
   Student.create(

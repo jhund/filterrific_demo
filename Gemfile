@@ -8,6 +8,7 @@ gem 'haml-rails', '>= 0.4'
 gem 'filterrific', '~> 1.2.0'
 gem 'jquery-rails'
 gem 'pg', '>= 0.15.0'
+gem 'random_data'
 gem 'thin', '>= 1.5.0'
 gem 'will_paginate'
 
