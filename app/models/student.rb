@@ -8,6 +8,9 @@ class Student < ActiveRecord::Base
                 with_created_at_gte
               ]
 
+  # default for will_paginate
+  self.per_page = 10
+
   belongs_to :country
 
   scope :search_query, lambda { |query|
