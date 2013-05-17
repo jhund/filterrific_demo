@@ -16,3 +16,7 @@ Instead we include CSS files using sass' @import.
 
 /* Import any app style files below this line */
 @import 'bootstrap-datepicker'
+
+#filterrific_form {
+  margin-bottom: 0;
+}
