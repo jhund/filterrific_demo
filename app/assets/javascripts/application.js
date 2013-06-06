@@ -16,3 +16,5 @@
 
 //= require bootstrap-datepicker
 //= require filterrific-jquery
+
+//= require chardinjs

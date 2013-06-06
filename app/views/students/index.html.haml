@@ -1,24 +1,31 @@
-.page-header
-  .pull-right= link_to 'Home', root_path
-  %h1 Students
+.page-header{ :style => 'margin-bottom: 70px;' }
+  .pull-right
+    = link_to 'Home', root_path, :style => 'display: inline-block; margin-top: 25px;'
+  %h1.chardin_box{ :'data-position' => 'right', :'data-intro' => 'This is a demo for filterrific. Filter and sort the list of students. Click anywhere to remove the overlay.' }
+    Students
+  = link_to "Click me for instructions!",
+            "#",
+            :id => "overlayTrigger",
+            :class => 'btn btn-success btn-large',
+            :style => 'margin: 0 0 15px 20px;'
 
 .well
   = form_for @filterrific do |f|
     .row
-      .span3
+      .span3.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Search by first name, last name, or email.' }
         %label Search
         = f.text_field :search_query,
                        :class => 'filterrific-periodically-observed'
-      .span3
+      .span3.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Filter by country.' }
         %label Country
         = f.select :with_country_id,
                    Country.options_for_select,
                    { :include_blank => '- Any -' }
-      .span2
+      .span2.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Filter by registration date.' }
         %label Registered after
         = f.text_field :with_created_at_gte,
                        :class => 'js-datepicker span2'
-      .span3
+      .span3.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Change the sorting.' }
         %label Sorted by
         = f.select :sorted_by, Student.options_for_sorted_by
 
@@ -27,4 +34,8 @@
            :locals => { :students => @students }
 
 :javascript
-  $('.js-datepicker').datepicker()
+  $('.js-datepicker').datepicker();
+  $('#overlayTrigger').click(function(event) {
+    event.preventDefault();
+    $('body').chardinJs('start');
+  });

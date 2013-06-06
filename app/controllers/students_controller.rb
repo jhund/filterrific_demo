@@ -8,8 +8,6 @@ class StudentsController < ApplicationController
     @students = Student.filterrific_find(@filterrific).page(params[:page])
     session[:filterrific_students] = @filterrific.to_hash
 
-    sleep 1 # we add an artifical delay so that we can see the AJAX spinner
-
     respond_to do |format|
       format.html
       format.js

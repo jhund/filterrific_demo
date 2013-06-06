@@ -4,6 +4,7 @@ gem 'rails', '3.2.13'
 
 gem 'bootstrap-datepicker-rails'
 gem 'bootstrap-sass', '>= 2.3.0.0'
+gem 'chardinjs-rails'
 gem 'haml-rails', '>= 0.4'
 gem 'filterrific', '~> 1.2.0'
 gem 'jquery-rails'
