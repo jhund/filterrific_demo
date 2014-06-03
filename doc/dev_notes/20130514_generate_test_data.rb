@@ -1,6 +1,7 @@
 # Run this script on the console to generate demo data
 
 # Create countries
+Country.delete_all
 country_names = [
   'United States',
   'Canada',
@@ -16,6 +17,7 @@ countries = country_names.map do |country_name|
 end
 
 # Create students
+Student.delete_all
 1000.times.each do
   first_name = Random.firstname
   last_name = Random.lastname
