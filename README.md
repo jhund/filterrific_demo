@@ -6,6 +6,9 @@ This is a demo Rails app for the Filterrific gem.
 * [Live demo](http://filterrific-demo.herokuapp.com)
 * [Filterrific documentation](http://filterrific.clearcove.ca)
 
+It is also used for integration testing of Filterrific into different versions
+of Rails.
+
 ### How to run the app
 
 1. Clone this repo.
