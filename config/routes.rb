@@ -1,4 +1,4 @@
-FilterrificDemo::Application.routes.draw do
+Rails::Application.routes.draw do
 
   resources :countries
   resources :students do
