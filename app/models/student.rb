@@ -62,8 +62,6 @@ class Student < ActiveRecord::Base
 
   delegate :name, :to => :country, :prefix => true
 
-  attr_accessible :first_name, :last_name, :email, :country_id
-
   def self.options_for_sorted_by
     [
       ['Name (a-z)', 'name_asc'],
