@@ -15,6 +15,7 @@ gem 'spring', group: :development
 gem 'thin'
 gem 'turbolinks'
 gem 'will_paginate'
+gem 'will_paginate-bootstrap'
 
 # Gems used only for assets and not required
 # in production environments by default.

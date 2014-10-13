@@ -6,28 +6,36 @@
   = link_to "Click me for instructions!",
             "#",
             :id => "overlayTrigger",
-            :class => 'btn btn-success btn-large',
+            :class => 'btn btn-success btn-lg',
             :style => 'margin: 0 0 15px 20px;'
 
 .well
   = form_for @filterrific do |f|
     .row
-      .span3.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Search by first name, last name, or email.' }
-        %label Search
-        = f.text_field :search_query,
-                       :class => 'filterrific-periodically-observed'
-      .span3.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Filter by country.' }
-        %label Country
-        = f.select :with_country_id,
-                   Country.options_for_select,
-                   { :include_blank => '- Any -' }
-      .span2.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Filter by registration date.' }
-        %label Registered after
-        = f.text_field :with_created_at_gte,
-                       :class => 'js-datepicker span2'
-      .span3.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Change the sorting.' }
-        %label Sorted by
-        = f.select :sorted_by, Student.options_for_sorted_by
+      .col-md-3
+        .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Search by first name, last name, or email.' }
+          %label Search
+          = f.text_field :search_query,
+                         :class => 'filterrific-periodically-observed form-control'
+      .col-md-3
+        .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Filter by country.' }
+          %label Country
+          = f.select :with_country_id,
+                     Country.options_for_select,
+                     { :include_blank => '- Any -' },
+                     { :class => 'form-control' }
+      .col-md-2
+        .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Filter by registration date.' }
+          %label Registered after
+          = f.text_field :with_created_at_gte,
+                         :class => 'js-datepicker form-control'
+      .col-md-4
+        .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Change the sorting.' }
+          %label Sorted by
+          = f.select :sorted_by,
+                     Student.options_for_sorted_by,
+                     {},
+                     { :class => 'form-control' }
 
 #results
   = render :partial => 'students/list',
