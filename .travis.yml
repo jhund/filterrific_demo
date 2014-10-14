@@ -16,3 +16,7 @@ env:
 before_script:
   - mysql -e 'create database filterrific_demo_test;'
   - psql -c 'create database filterrific_demo_test;' -U postgres
+
+branches:
+  except:
+    - master
