@@ -14,5 +14,5 @@ env:
   - DB=postgresql
 
 before_script:
-  - mysql -e 'create database myapp_test;'
-  - psql -c 'create database myapp_test;' -U postgres
+  - mysql -e 'create database filterrific_demo_test;'
+  - psql -c 'create database filterrific_demo_test;' -U postgres

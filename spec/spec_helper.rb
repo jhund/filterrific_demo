@@ -9,7 +9,7 @@ require 'minitest/autorun'
 configs = YAML.load_file('spec/database.yml')
 ActiveRecord::Base.configurations = configs
 db_name = ENV['DB'] || 'sqlite'
-ActiveRecord::Base.establish_connection(db_name)
+ActiveRecord::Base.establish_connection(db_name.to_sym)
 ActiveRecord::Base.default_timezone = :utc
 
 

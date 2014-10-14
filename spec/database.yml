@@ -4,15 +4,15 @@ sqlite:
   timeout: 500
 mysql:
   adapter: mysql
-  database: myapp_test
-  username: travis
+  database: filterrific_demo_test
+  username: root
   encoding: utf8
 mysql2:
   adapter: mysql2
-  database: myapp_test
-  username: travis
+  database: filterrific_demo_test
+  username: root
   encoding: utf8
 postgresql:
   adapter: postgresql
-  database: myapp_test
+  database: filterrific_demo_test
   username: postgres

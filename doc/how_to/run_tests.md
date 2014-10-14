@@ -2,8 +2,8 @@
 
     rake
 
-Will run all specs with the local Ruby runtime.
+Will run all specs with all DB adapters and the local Ruby runtime.
 
     rake wwtd
 
-Will run all specs with all Ruby runtimes.
+Will run all specs with all DB adapters and all Ruby runtimes.
