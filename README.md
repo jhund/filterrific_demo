@@ -7,7 +7,8 @@ This is a demo Rails app for the Filterrific gem.
 * [Filterrific documentation](http://filterrific.clearcove.ca)
 
 It is also used for integration testing of Filterrific into different versions
-of Rails.
+of Rails. I prefer testing Rails Engines in a separate app rather than the dummy
+app inside the Engine gem.
 
 ### How to run the app
 
