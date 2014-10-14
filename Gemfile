@@ -7,7 +7,7 @@ gem 'bootstrap-sass'
 gem 'chardinjs-rails'
 gem 'filterrific' #, path: '../filterrific'
 gem 'haml-rails'
-gem 'jbuilder', '~> 2.0'
+gem 'jbuilder'
 gem 'jquery-rails'
 gem 'pg'
 gem 'random_data'
@@ -19,9 +19,9 @@ gem 'will_paginate-bootstrap'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails', '~> 4.0.3'
-  gem 'coffee-rails', '~> 4.0.0'
-  gem 'uglifier', '>= 1.3.0'
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  gem 'uglifier'
 end
 
 group :development, :test do
