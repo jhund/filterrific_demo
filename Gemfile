@@ -20,9 +20,9 @@ gem 'will_paginate-bootstrap'
 # in production environments by default.
 group :assets do
   gem 'sass-rails'
-  gem 'coffee-rails'
   gem 'uglifier'
 end
+gem 'coffee-rails' # specify in default group to avoid autoload warnings on tests
 
 group :development, :test do
   gem 'spring'
