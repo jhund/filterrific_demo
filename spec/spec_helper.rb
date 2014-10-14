@@ -5,14 +5,6 @@ require 'bundler/setup'
 require 'minitest/autorun'
 
 
-# Connect to specified database
-configs = YAML.load_file('spec/database.yml')
-ActiveRecord::Base.configurations = configs
-db_name = ENV['DB'] || 'sqlite'
-ActiveRecord::Base.establish_connection(db_name.to_sym)
-ActiveRecord::Base.default_timezone = :utc
-
-
 # Allow controller specs with MiniTest
 require 'action_controller/test_case'
 class MiniTest::Spec
