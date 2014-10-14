@@ -1,0 +1,18 @@
+sqlite:
+  adapter: sqlite3
+  database: ":memory:"
+  timeout: 500
+mysql:
+  adapter: mysql
+  database: myapp_test
+  username: travis
+  encoding: utf8
+mysql2:
+  adapter: mysql2
+  database: myapp_test
+  username: travis
+  encoding: utf8
+postgresql:
+  adapter: postgresql
+  database: myapp_test
+  username: postgres

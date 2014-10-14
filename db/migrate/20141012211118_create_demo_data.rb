@@ -24,14 +24,11 @@ class CreateDemoData < ActiveRecord::Migration
       email = first_name.first.downcase + last_name.downcase + '@' + Random.email.split('@').last
       country = countries.sample
       Student.create(
-        {
-          :first_name => first_name,
-          :last_name => last_name,
-          :email => email,
-          :country_id => country.id,
-          :created_at => Random.date(-500..0),
-        },
-        :without_protection => true
+        :first_name => first_name,
+        :last_name => last_name,
+        :email => email,
+        :country_id => country.id,
+        :created_at => Random.date(-500..0),
       )
     end
   end

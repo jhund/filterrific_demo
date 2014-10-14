@@ -1,1 +1,18 @@
+language: ruby
+
 script: 'bundle exec rake test'
+
+rvm:
+  - 1.9.3
+  - 2.0.0
+  - 2.1.2
+
+env:
+  - DB=sqlite
+  - DB=mysql
+  - DB=mysql2
+  - DB=postgresql
+
+before_script:
+  - mysql -e 'create database myapp_test;'
+  - psql -c 'create database myapp_test;' -U postgres
