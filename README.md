@@ -1,5 +1,5 @@
-Filterrific Demo App
-====================
+Filterrific Demo App (Rails 4.1 branch)
+=======================================
 
 This is a demo Rails app for the Filterrific gem.
 
