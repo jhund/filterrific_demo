@@ -74,6 +74,8 @@ GEM
     mime-types (2.4.1)
     minitest (5.4.2)
     multi_json (1.10.1)
+    mysql (2.9.1)
+    mysql2 (0.3.16)
     pg (0.17.1)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -111,6 +113,7 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
+    sqlite3 (1.3.9)
     thin (1.6.3)
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0)
@@ -128,6 +131,7 @@ GEM
     will_paginate (3.0.7)
     will_paginate-bootstrap (1.0.1)
       will_paginate (>= 3.0.3)
+    wwtd (0.5.5)
 
 PLATFORMS
   ruby
@@ -141,13 +145,17 @@ DEPENDENCIES
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails
+  mysql
+  mysql2
   pg
   rails (= 4.1.6)
   random_data
   sass-rails (~> 4.0.3)
   spring
+  sqlite3
   thin
   turbolinks
   uglifier (>= 1.3.0)
   will_paginate
   will_paginate-bootstrap
+  wwtd
