@@ -5,6 +5,10 @@ class StudentsController < ApplicationController
       Student,
       params[:filterrific] || session[:filterrific_students]
     )
+    @filterrific.select_options = {
+      sorted_by: Student.options_for_sorted_by,
+      with_country_id: Country.options_for_select
+    }
     @students = Student.filterrific_find(@filterrific).page(params[:page])
     session[:filterrific_students] = @filterrific.to_hash
 

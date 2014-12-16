@@ -21,7 +21,7 @@
         .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Filter by country.' }
           %label Country
           = f.select :with_country_id,
-                     Country.options_for_select,
+                     @filterrific.select_options[:with_country_id],
                      { :include_blank => '- Any -' },
                      { :class => 'form-control' }
       .col-md-2
@@ -33,7 +33,7 @@
         .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Change the sorting.' }
           %label Sorted by
           = f.select :sorted_by,
-                     Student.options_for_sorted_by,
+                     @filterrific.select_options[:sorted_by],
                      {},
                      { :class => 'form-control' }
 
