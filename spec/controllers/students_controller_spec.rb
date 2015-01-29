@@ -17,9 +17,4 @@ describe StudentsController do
     assigns(:filterrific).must_be_instance_of(Filterrific::ParamSet)
   end
 
-  it 'responds to GET :reset_filterrific' do
-    get :reset_filterrific
-    assert_response(:redirect)
-  end
-
 end
