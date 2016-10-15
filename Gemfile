@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.0'
+gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 
 gem 'bootstrap-datepicker-rails'
 gem 'bootstrap-sass'
@@ -15,6 +15,7 @@ gem 'thin'
 gem 'turbolinks'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
+gem 'rspec-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
