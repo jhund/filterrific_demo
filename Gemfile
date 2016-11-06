@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.0'
+gem 'rails', '5.0.0'
 
 gem 'bootstrap-datepicker-rails'
 gem 'bootstrap-sass'
@@ -27,7 +27,7 @@ gem 'coffee-rails' # specify in default group to avoid autoload warnings on test
 group :development, :test do
   gem 'spring'
   gem 'wwtd'
-  gem 'web-console', '~> 2.0'
+  gem 'web-console'
 
   # supported database adapters
   # gem 'pg' # already specified in default group higher up
