@@ -3,6 +3,9 @@
 Whenever a new major or minor version (e.g., 4.2) is released, perform the
 following steps:
 
+Idea: Only track major versions in branches named `5.x` to cut down on maintenance effort.
+Rely on Rails' promise that minor versions are compatible.
+
 * create a new branch off master with the name of the new version, e.g., 'rails-4.2'
 * update `.ruby-gemset` and `.ruby-version` (if required)
 * Upgrade app to new version of Rails (either upgrade from current version, or
