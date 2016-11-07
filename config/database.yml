@@ -3,12 +3,6 @@ sqlite: &sqlite
   database: ":memory:"
   timeout: 500
 
-mysql: &mysql
-  adapter: mysql
-  database: filterrific_demo_<%= Rails.env %>
-  username: root
-  encoding: utf8
-
 mysql2: &mysql2
   adapter: mysql2
   database: filterrific_demo_<%= Rails.env %>

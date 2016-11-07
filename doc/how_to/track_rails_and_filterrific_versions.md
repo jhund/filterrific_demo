@@ -10,7 +10,7 @@ following steps:
   for how to upgrade rails:
     * update rails version in Gemfile
     * run `bundle install`
-    * run `rake rails:update`
+    * run `rails app:update`
 * make any changes required for new Rails version
 * merge new branch back into master, keep both in synch for any changes
 
