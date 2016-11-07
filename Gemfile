@@ -25,13 +25,19 @@ end
 gem 'coffee-rails' # specify in default group to avoid autoload warnings on tests
 
 group :development, :test do
-  gem 'spring'
-  gem 'wwtd'
-  gem 'web-console'
-
   # supported database adapters
   # gem 'pg' # already specified in default group higher up
   gem 'sqlite3'
-  gem 'mysql'
   gem 'mysql2'
+end
+
+group :development do
+  gem 'listen', '~> 3.0.5'
+  gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'web-console'
+end
+
+group :test do
+  gem 'wwtd'
 end

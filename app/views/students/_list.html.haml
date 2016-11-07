@@ -13,11 +13,11 @@
     %th Country
     %th Registered at
   - students.each do |student|
-    %tr
-      %td= student.full_name
-      %td= student.email
-      %td= student.country_name
-      %td= student.created_at.to_date.to_s(:long)
+    %tr.student
+      %td.name= student.full_name
+      %td.email= student.email
+      %td.country= student.country_name
+      %td.created_at= student.created_at.to_date.to_s(:long)
 
 .chardin_box{ :'data-position' => 'top', :'data-intro' => "will_paginate's paginator works as expected." }
   = will_paginate students, renderer: BootstrapPagination::Rails
