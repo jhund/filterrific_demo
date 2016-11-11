@@ -1,4 +1,4 @@
-Filterrific Demo App (Rails 4.1 branch)
+Filterrific Demo App (Rails 5.x branch)
 =======================================
 
 This is a demo Rails app for the Filterrific gem.
@@ -22,4 +22,4 @@ app inside the Engine gem.
 
 ### Copyright
 
-Copyright (c) 2010 - 2015 Jo Hund. (MIT) LICENSE
+Copyright (c) 2010 - 2016 Jo Hund. (MIT) LICENSE
