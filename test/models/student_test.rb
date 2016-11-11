@@ -1,27 +1,24 @@
 require 'test_helper'
 
-describe Student do
+class StudentTest < ActiveSupport::TestCase
 
-  describe '.filterrific_find' do
+  test 'responds to .filterrific_find' do
+    assert_respond_to(Student, :filterrific_find)
+  end
 
-    it 'responds to .filterrific_find' do
-      Student.must_respond_to(:filterrific_find)
-    end
+  test 'has expected test data for countries' do
+    assert_equal(2, Country.count)
+  end
 
-    it 'has expected test data for countries' do
-      Country.count.must_equal(2)
-    end
+  test 'has expected test data for students' do
+    assert_equal(2, Student.count)
+  end
 
-    it 'has expected test data for students' do
-      Student.count.must_equal(2)
-    end
-
-    it 'filters by country' do
-      Student.with_country_id(countries(:canada))
-             .map(&:id)
-             .must_equal([students(:student1).id])
-    end
-
+  test 'filters by country' do
+    assert_equal(
+      [students(:student1).id],
+      Student.with_country_id(countries(:canada)).map(&:id)
+    )
   end
 
 end

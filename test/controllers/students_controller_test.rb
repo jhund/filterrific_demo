@@ -1,9 +1,9 @@
 require 'test_helper'
 
-describe StudentsController do
+class StudentsControllerTest < ActionDispatch::IntegrationTest
 
-  it 'responds to GET :index' do
-    get :index
+  test 'responds to GET :index' do
+    get students_path
     assert_response(:success)
   end
 
