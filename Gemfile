@@ -27,8 +27,6 @@ gem 'coffee-rails' # specify in default group to avoid autoload warnings on test
 group :development, :test do
   # supported database adapters
   # gem 'pg' # already specified in default group higher up
-  gem 'sqlite3'
-  gem 'mysql'
   gem 'mysql2'
 end
 

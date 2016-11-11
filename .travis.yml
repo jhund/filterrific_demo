@@ -4,14 +4,11 @@ script:
   - bundle exec rake test
 
 rvm:
-  - 1.9.3
   - 2.0.0
   - 2.1.2
   - 2.2.0
 
 env:
-#  - DB=sqlite # there is a regression in Rails 4.2 where sqlite doesn't work. Uncomment this in next release after 4.2.1
-  - DB=mysql
   - DB=mysql2
   - DB=postgresql
 
