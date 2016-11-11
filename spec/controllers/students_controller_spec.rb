@@ -9,7 +9,7 @@ describe StudentsController do
 
   it 'assigns @students' do
     get :index
-    assigns(:students).count.must_equal(2)
+    assigns(:students).must_equal([])
   end
 
   it 'assigns @filterrific' do
