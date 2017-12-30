@@ -1,0 +1,17 @@
+defaults: &defaults
+  adapter: postgresql
+  database: filterrific_demo_<%= Rails.env %>
+  username: postgres
+  encoding: utf8
+  pool: 5
+  timeout: 5000
+  host: localhost
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
