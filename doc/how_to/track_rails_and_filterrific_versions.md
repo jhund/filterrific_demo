@@ -1,9 +1,9 @@
 # How to track Rails versions
 
-Whenever a new major or minor version (e.g., 4.2) is released, perform the
+Whenever a new major Rails version (e.g., 4.2) is released, perform the
 following steps:
 
-* create a new branch off master with the name of the new version, e.g., 'rails-4.2'
+* create a new branch off master with the name of the new version, e.g., 'rails-4.x'
 * update `.ruby-gemset` and `.ruby-version` (if required)
 * Upgrade app to new version of Rails (either upgrade from current version, or
   create from scratch). See [Rails Guides](http://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html)
