@@ -6,7 +6,7 @@ gem 'bootstrap-datepicker-rails'
 gem 'bootstrap-sass', '~> 2.3.2.2' # Aug. 2013
 gem 'chardinjs-rails'
 gem 'haml-rails', '~> 0.4' # Feb. 2013
-gem 'filterrific', '~> 3.0', :path => '../filterrific'
+gem 'filterrific', '~> 3.0' #, :path => '../filterrific'
 gem 'jquery-rails', '~> 3.1.0' # jan. 2014
 gem 'pg', '~> 0.15.0'
 gem 'random_data'
