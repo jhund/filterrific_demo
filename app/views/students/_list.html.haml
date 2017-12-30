@@ -1,6 +1,6 @@
 .well.well-small
   .pull-right{ :'data-position' => 'bottom', :'data-intro' => 'Reset the filter settings to defaults.' }
-    = link_to "Reset filters", reset_filterrific_students_path, :class => 'btn btn-small'
+    = link_to "Reset filters", reset_filterrific_url, :class => 'btn btn-default btn-sm'
   .chardin_box{ :'data-position' => 'bottom', :'data-intro' => "will_paginate's entries info works as expected." }
     = page_entries_info students, :model => 'student'
   .chardin_box{ :'data-position' => 'bottom', :'data-intro' => 'Spinner indicates update.' }
@@ -8,16 +8,16 @@
 
 %table.table
   %tr
-    %th Name
+    %th= filterrific_sorting_link(@filterrific, :name)
     %th Email
     %th Country
     %th Registered at
   - students.each do |student|
-    %tr
-      %td= student.full_name
-      %td= student.email
-      %td= student.country_name
-      %td= student.created_at.to_date.to_s(:long)
+    %tr.student
+      %td.name= student.full_name
+      %td.email= student.email
+      %td.country= student.country_name
+      %td.created_at= student.created_at.to_date.to_s(:long)
 
 .chardin_box{ :'data-position' => 'top', :'data-intro' => "will_paginate's paginator works as expected." }
-  = will_paginate students
+  = will_paginate students, renderer: BootstrapPagination::Rails

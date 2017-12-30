@@ -1,22 +1,20 @@
 class StudentsController < ApplicationController
 
   def index
-    @filterrific = Filterrific.new(
+    @filterrific = initialize_filterrific(
       Student,
-      params[:filterrific] || session[:filterrific_students]
-    )
-    @students = Student.filterrific_find(@filterrific).page(params[:page])
-    session[:filterrific_students] = @filterrific.to_hash
+      params[:filterrific],
+      :select_options => {
+        sorted_by: Student.options_for_sorted_by,
+        with_country_id: Country.options_for_select
+      }
+    ) or return
+    @students = @filterrific.find.page(params[:page])
 
     respond_to do |format|
       format.html
       format.js
     end
-  end
-
-  def reset_filterrific
-    session[:filterrific_students] = nil
-    redirect_to :action => :index
   end
 
 end

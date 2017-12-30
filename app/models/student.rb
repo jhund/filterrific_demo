@@ -1,7 +1,7 @@
 class Student < ActiveRecord::Base
 
-  filterrific :default_settings => { :sorted_by => 'created_at_desc' },
-              :filter_names => %w[
+  filterrific :default_filter_params => { :sorted_by => 'created_at_desc' },
+              :available_filters => %w[
                 sorted_by
                 search_query
                 with_country_id
