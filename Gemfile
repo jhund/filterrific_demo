@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
-gem 'rails', '5.0.0'
+gem 'rails', '5.1.4'
 
 gem 'bootstrap-datepicker-rails'
 gem 'bootstrap-sass'
 gem 'chardinjs-rails'
-gem 'filterrific' #, path: '../filterrific'
+gem 'filterrific', '~> 5.0' #, path: '../filterrific'
 gem 'haml-rails'
 gem 'jbuilder'
 gem 'jquery-rails'
