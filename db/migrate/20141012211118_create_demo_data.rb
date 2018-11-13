@@ -1,4 +1,4 @@
-class CreateDemoData < ActiveRecord::Migration
+class CreateDemoData < ActiveRecord::Migration[5.2]
   def change
     # Create countries
     Country.delete_all

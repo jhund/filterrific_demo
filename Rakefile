@@ -3,7 +3,4 @@
 
 require_relative 'config/application'
 
-require 'wwtd/tasks'
-task default: 'wwtd:local'
-
 Rails.application.load_tasks
