@@ -1,4 +1,4 @@
-.page-header{ :style => 'margin-bottom: 70px;' }
+.pb-2.mt-5.mb-5.border-bottom
   .pull-right
     = link_to 'Home', root_path, :style => 'display: inline-block; margin-top: 25px;'
   %h1.chardin_box{ :'data-position' => 'right', :'data-intro' => 'This is a demo for filterrific. Filter and sort the list of students. Click anywhere to remove the overlay.' }
@@ -9,29 +9,35 @@
             :class => 'btn btn-success btn-lg',
             :style => 'margin: 0 0 15px 20px;'
 
-.well
+.card.card-body.bg-light
+  - puts @filterrific.inspect
   = form_for_filterrific @filterrific do |f|
     .row
       .col-md-3
         .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Search by first name, last name, or email.' }
-          %label Search
+          %label.font-weight-bold Search
           = f.text_field :search_query,
                          :class => 'filterrific-periodically-observed form-control'
       .col-md-3
         .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Filter by country.' }
-          %label Country
+          %label.font-weight-bold Country
           = f.select :with_country_id,
                      @filterrific.select_options[:with_country_id],
                      { :include_blank => '- Any -' },
                      { :class => 'form-control' }
-      .col-md-2
-        .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Filter by registration date.' }
-          %label Registered after
-          = f.text_field :with_created_at_gte,
-                         :class => 'js-datepicker form-control'
+
+      .col-sm-2
+        %label.font-weight-bold Registered after
+        = f.text_field :with_created_at_gte,
+                       :'id' => 'filterrific_with_created_at_gte',
+                       :'class' => 'form-control datetimepicker-input',
+                       :'data-target' => '#filterrific_with_created_at_gte',
+                       :'data-toggle' => 'datepicker',
+                       :'value' => '' 
+
       .col-md-4
         .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Change the sorting.' }
-          %label Sorted by
+          %label.font-weight-bold Sorted by
           = f.select :sorted_by,
                      @filterrific.select_options[:sorted_by],
                      {},
@@ -42,8 +48,13 @@
            :locals => { :students => @students }
 
 :javascript
-  $('.js-datepicker').datepicker();
-  $('#overlayTrigger').click(function(event) {
-    event.preventDefault();
-    $('body').chardinJs('start');
-  });
+
+    $('#overlayTrigger').click(function(event) {
+      event.preventDefault();
+      $('body').chardinJs('start');
+    });
+
+    $('[data-toggle="datepicker"]').datepicker({
+        autoHide: true,
+        zIndex: 2048,
+    });

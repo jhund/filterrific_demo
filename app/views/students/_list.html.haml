@@ -1,8 +1,11 @@
-.well.well-small
-  .pull-right{ :'data-position' => 'bottom', :'data-intro' => 'Reset the filter settings to defaults.' }
-    = link_to "Reset filters", reset_filterrific_url, :class => 'btn btn-default btn-sm'
+.card.card-body.bg-light.d-block.p-5.my-3
   .chardin_box{ :'data-position' => 'bottom', :'data-intro' => "will_paginate's entries info works as expected." }
     = page_entries_info students, :model => 'student'
+  .chardin_box.float-left{ :'data-position' => 'bottom',
+                :'data-intro' => 'Reset the filter settings to defaults.',
+                :'class' => 'float-right' }
+    = link_to "Reset filters", reset_filterrific_url,
+                              :class => 'btn btn-secondary  align-middle float-right'
   .chardin_box{ :'data-position' => 'bottom', :'data-intro' => 'Spinner indicates update.' }
     = render_filterrific_spinner
 
@@ -20,4 +23,4 @@
       %td.created_at= student.created_at.to_date.to_s(:long)
 
 .chardin_box{ :'data-position' => 'top', :'data-intro' => "will_paginate's paginator works as expected." }
-  = will_paginate students, renderer: BootstrapPagination::Rails
+  = will_paginate students, renderer: WillPaginate::ActionView::BootstrapLinkRenderer 

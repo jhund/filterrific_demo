@@ -1,4 +1,4 @@
-class Student < ActiveRecord::Base
+class Student < ApplicationRecord
 
   filterrific :default_filter_params => { :sorted_by => 'created_at_desc' },
               :available_filters => %w[
@@ -13,7 +13,7 @@ class Student < ActiveRecord::Base
 
   belongs_to :country
 
-  scope :search_query, lambda { |query|
+  scope :search_query, ->(query) {
     return nil  if query.blank?
     # condition query, parse into individual keywords
     terms = query.downcase.split(/\s+/)
@@ -39,24 +39,31 @@ class Student < ActiveRecord::Base
     )
   }
 
-  scope :sorted_by, lambda { |sort_option|
+  scope :sorted_by, ->(sort_option) {
     # extract the sort direction from the param value.
     direction = (sort_option =~ /desc$/) ? 'desc' : 'asc'
+    students = Student.arel_table
+    countries = Country.arel_table
     case sort_option.to_s
     when /^created_at_/
-      order("students.created_at #{ direction }")
+      # order("students.created_at #{direction}")
+      order(students[:created_at].send(direction))
     when /^name_/
-      order("LOWER(students.last_name) #{ direction }, LOWER(students.first_name) #{ direction }")
+      # order("LOWER(students.last_name) #{direction}, LOWER(students.first_name) #{direction}")
+      order(students[:last_name].lower.send(direction)).order(students[:first_name].lower.send(direction))
     when /^country_name_/
-      order("LOWER(countries.name) #{ direction }").includes(:country)
+      # order("LOWER(countries.name) #{ direction }").includes(:country)
+      Student.joins(:country).order(countries[:name].lower.send(direction)).order(students[:last_name].lower.send(direction))
     else
-      raise(ArgumentError, "Invalid sort option: #{ sort_option.inspect }")
+      raise(ArgumentError, "Invalid sort option: #{sort_option.inspect}")
     end
   }
-  scope :with_country_id, lambda { |country_ids|
+
+  scope :with_country_id, ->(country_ids) {
     where(:country_id => [*country_ids])
   }
-  scope :with_created_at_gte, lambda { |ref_date|
+
+  scope :with_created_at_gte, ->(ref_date) {
     where('students.created_at >= ?', ref_date)
   }
 
@@ -78,5 +85,5 @@ class Student < ActiveRecord::Base
   def decorated_created_at
     created_at.to_date.to_s(:long)
   end
-
+  
 end
