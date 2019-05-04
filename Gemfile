@@ -5,8 +5,7 @@ ruby '2.6.1'
 
 gem 'rails', '~> 5.2.2'
 
-gem 'bootstrap'
-gem 'sassc-rails'
+gem 'bootstrap', '~> 4.3.1'
 gem 'chardinjs-rails'
 gem 'filterrific' , path: '../filterrific'
 gem 'haml-rails'
@@ -14,10 +13,10 @@ gem 'jbuilder'
 gem 'jquery-rails'
 gem 'pg'
 gem 'puma'
+gem 'sassc-rails'
 gem 'turbolinks'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap4'
-#gem 'font-awesome-rails'
 
 
 # Gems used only for assets and not required

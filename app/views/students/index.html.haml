@@ -1,32 +1,28 @@
 .pb-2.mt-5.mb-5.border-bottom
-  .pull-right
-    = link_to 'Home', root_path, :style => 'display: inline-block; margin-top: 25px;'
-  %h1.chardin_box{ :'data-position' => 'right', :'data-intro' => 'This is a demo for filterrific. Filter and sort the list of students. Click anywhere to remove the overlay.' }
-    Students
-  = link_to "Click me for instructions!",
-            "#",
-            :id => "overlayTrigger",
-            :class => 'btn btn-success btn-lg',
-            :style => 'margin: 0 0 15px 20px;'
+  .row
+    .h1.col-md-11 
+      Students
+    .col-md-1 
+      = link_to 'Home', root_path, :style => 'display: inline-block; margin-top: 25px;'
 
 .card.card-body.bg-light
   - puts @filterrific.inspect
   = form_for_filterrific @filterrific do |f|
     .row
       .col-md-3
-        .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Search by first name, last name, or email.' }
+        .form-group
           %label.font-weight-bold Search
           = f.text_field :search_query,
                          :class => 'filterrific-periodically-observed form-control'
       .col-md-3
-        .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Filter by country.' }
+        .form-group
           %label.font-weight-bold Country
           = f.select :with_country_id,
                      @filterrific.select_options[:with_country_id],
                      { :include_blank => '- Any -' },
                      { :class => 'form-control' }
 
-      .col-sm-2
+      .col-md-3
         %label.font-weight-bold Registered after
         = f.text_field :with_created_at_gte,
                        :'id' => 'filterrific_with_created_at_gte',
@@ -35,8 +31,8 @@
                        :'data-toggle' => 'datepicker',
                        :'value' => '' 
 
-      .col-md-4
-        .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Change the sorting.' }
+      .col-md-3
+        .form-group
           %label.font-weight-bold Sorted by
           = f.select :sorted_by,
                      @filterrific.select_options[:sorted_by],
@@ -48,11 +44,6 @@
            :locals => { :students => @students }
 
 :javascript
-
-    $('#overlayTrigger').click(function(event) {
-      event.preventDefault();
-      $('body').chardinJs('start');
-    });
 
     $('[data-toggle="datepicker"]').datepicker({
         autoHide: true,
