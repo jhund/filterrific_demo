@@ -7,7 +7,7 @@ gem 'rails', '~> 5.2.2'
 
 gem 'bootstrap', '~> 4.3.1'
 gem 'chardinjs-rails'
-gem 'filterrific' , path: '../filterrific'
+gem 'filterrific' #, path: '../filterrific'
 gem 'haml-rails'
 gem 'jbuilder'
 gem 'jquery-rails'
