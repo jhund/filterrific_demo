@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby "2.3.1"
 
 gem 'rails', '5.1.4'
 
@@ -10,6 +11,7 @@ gem 'haml-rails'
 gem 'jbuilder'
 gem 'jquery-rails'
 gem 'pg'
+gem 'puma'
 gem 'random_data'
 gem 'thin'
 gem 'turbolinks'

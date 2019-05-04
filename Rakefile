@@ -3,7 +3,9 @@
 
 require_relative 'config/application'
 
-require 'wwtd/tasks'
-task default: 'wwtd:local'
+if Rails.env.test?
+  require 'wwtd/tasks'
+  task default: 'wwtd:local'
+end
 
 Rails.application.load_tasks
