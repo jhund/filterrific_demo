@@ -1,9 +1,11 @@
-class Country < ActiveRecord::Base
+class Country < ApplicationRecord
 
-  has_many :students, :dependent => :nullify
+  has_many :students, dependent: :nullify
 
   def self.options_for_select
-    order('LOWER(name)').map { |e| [e.name, e.id] }
+    countries = Country.arel_table
+    # order('LOWER(name)').map { |e| [e.name, e.id] }
+    order(countries[:name].lower).pluck(:name, :id)
   end
 
 end

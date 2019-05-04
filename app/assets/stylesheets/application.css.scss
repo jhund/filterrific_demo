@@ -12,12 +12,11 @@ Instead we include CSS files using sass' @import.
 
 
 /* Pull in bootstrap */
+
 @import 'bootstrap';
+@import 'components/_filterrific_filter';
+@import 'components/datepicker';
 
-/* Import any app style files below this line */
-@import 'bootstrap-datepicker3.css';
-
-@import 'components/filterrific_filter';
-@import 'components/chardinjs_overrides.css';
-
-@import 'chardinjs.css';
+/*
+@import 'font-awesome';
+*/
