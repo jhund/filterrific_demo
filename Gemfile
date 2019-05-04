@@ -17,6 +17,13 @@ gem 'turbolinks'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap4'
 
+# Gems used only for assets and not required
+# in production environments by default.
+group :assets do
+  gem 'uglifier'
+end
+gem 'coffee-rails' # specify in default group to avoid autoload warnings on tests
+
 group :development, :test do
   # supported database adapters
   # gem 'pg' # already specified in default group higher up
