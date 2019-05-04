@@ -17,6 +17,5 @@
 //= require turbolinks
 
 //= require filterrific/filterrific-jquery
-//= require chardinjs
 
 //= require components/datepicker
