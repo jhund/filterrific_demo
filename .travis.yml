@@ -4,9 +4,6 @@ script:
   - bundle exec rake test
 
 rvm:
-  - 2.3.8
-  - 2.4.6
-  - 2.5.5
   - 2.6.1
 
 env:
@@ -20,3 +17,7 @@ before_script:
 branches:
   except:
     - master
+
+before_install:
+  gem update --system;
+  gem update bundler;
