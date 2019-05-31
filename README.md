@@ -22,4 +22,4 @@ app inside the Engine gem.
 
 ### Copyright
 
-Copyright (c) 2010 - 2016 Jo Hund. (MIT) LICENSE
+Copyright (c) 2010 - 2019 Jo Hund. (MIT) LICENSE
