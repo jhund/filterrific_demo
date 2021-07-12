@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.1'
+ruby '2.6.4'
 
 gem 'rails', '~> 5.2.2'
 
@@ -32,6 +32,7 @@ end
 
 group :development do
   gem 'faker'
+  gem 'listen'
 end
 
 group :test do
