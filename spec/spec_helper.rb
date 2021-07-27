@@ -1,12 +1,11 @@
 ENV["RAILS_ENV"] = "test"
-require File.expand_path('../../config/environment', __FILE__)
+require File.expand_path("../../config/environment", __FILE__)
 
-require 'bundler/setup'
-require 'minitest/autorun'
-
+require "bundler/setup"
+require "minitest/autorun"
 
 # Allow controller specs with MiniTest
-require 'action_controller/test_case'
+require "action_controller/test_case"
 class MiniTest::Spec
   include ActiveSupport::Testing::SetupAndTeardown
 end
@@ -19,8 +18,7 @@ class ControllerSpec < MiniTest::Spec
 end
 # Test subjects ending with 'Controller' are treated as functional tests
 # e.g. describe TestController do ...
-MiniTest::Spec.register_spec_type( /Controller$/, ControllerSpec )
-
+MiniTest::Spec.register_spec_type(/Controller$/, ControllerSpec)
 
 # Tell Rails to keep test database in synch with schema
 ActiveRecord::Migration.maintain_test_schema!

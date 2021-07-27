@@ -1,20 +1,18 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe StudentsController do
-
-  it 'responds to GET :index' do
+  it "responds to GET :index" do
     get :index
     assert_response(:success)
   end
 
-  it 'assigns @students' do
+  it "assigns @students" do
     get :index
     assigns(:students).must_equal([])
   end
 
-  it 'assigns @filterrific' do
+  it "assigns @filterrific" do
     get :index
     assigns(:filterrific).must_be_instance_of(Filterrific::ParamSet)
   end
-
 end
