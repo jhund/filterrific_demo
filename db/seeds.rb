@@ -26,6 +26,6 @@ countries = Country.all
     last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
     country_id: country.id,
-    created_at: Faker::Time.between(DateTime.now - 20, DateTime.now),
+    created_at: Faker::Time.between(DateTime.now - 20, DateTime.now)
   )
 end
