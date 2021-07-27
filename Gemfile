@@ -29,7 +29,7 @@ gem "coffee-rails" # specify in default group to avoid autoload warnings on test
 group :development, :test do
   # supported database adapters
   # gem 'pg' # already specified in default group higher up
-  # gem 'mysql2', '~> 0.3.18' # http://stackoverflow.com/questions/32457657/rails-4-gemloaderror-specified-mysql2-for-database-adapter-but-the-gem-i
+  gem 'mysql2', '~> 0.3.18' # http://stackoverflow.com/questions/32457657/rails-4-gemloaderror-specified-mysql2-for-database-adapter-but-the-gem-i
   gem "standard"
 end
 

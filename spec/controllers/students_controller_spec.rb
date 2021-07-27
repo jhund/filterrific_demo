@@ -8,7 +8,8 @@ describe StudentsController do
 
   it "assigns @students" do
     get :index
-    assigns(:students).must_equal([])
+
+    assigns(:students).count.must_equal(1000)
   end
 
   it "assigns @filterrific" do
