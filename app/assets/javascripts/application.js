@@ -16,6 +16,6 @@
 //= require bootstrap
 //= require turbolinks
 
-//= require filterrific/filterrific-jquery
+//= require filterrific/filterrific
 
 //= require components/datepicker
