@@ -6,7 +6,7 @@ ruby '2.6.4'
 gem 'rails', '~> 5.2.2'
 
 gem 'bootstrap', '~> 4.3.1'
-gem 'filterrific' #, path: '../filterrific'
+gem 'filterrific', path: '../filterrific'
 gem 'haml-rails'
 gem 'jbuilder'
 gem 'jquery-rails'
