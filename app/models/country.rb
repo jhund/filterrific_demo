@@ -1,5 +1,4 @@
 class Country < ApplicationRecord
-
   has_many :students, dependent: :nullify
 
   def self.options_for_select
@@ -7,5 +6,4 @@ class Country < ApplicationRecord
     # order('LOWER(name)').map { |e| [e.name, e.id] }
     order(countries[:name].lower).pluck(:name, :id)
   end
-
 end
