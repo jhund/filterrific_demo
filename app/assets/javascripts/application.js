@@ -19,3 +19,7 @@
 //= require filterrific/filterrific
 
 //= require components/datepicker
+
+// Initialize Filterrific on document ready and turbolinks:load
+document.addEventListener('turbolinks:load', Filterrific.init);
+document.addEventListener('DOMContentLoaded', Filterrific.init)
