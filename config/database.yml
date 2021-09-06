@@ -1,20 +1,22 @@
-mysql2: &mysql2
-  adapter: mysql2
-  database: filterrific_demo_<%= Rails.env %>
-  username: root
-  encoding: utf8
+# mysql2: &mysql2
+#   adapter: mysql2
+#   database: filterrific_demo_<%= Rails.env %>
+#   username: root
+#   encoding: utf8
 
-postgresql: &postgresql
-  adapter: postgresql
-  database: filterrific_demo_<%= Rails.env %>
-  username: postgres
-  encoding: utf8
+# postgresql: &postgresql
+#   adapter: postgresql
+#   database: filterrific_demo_<%= Rails.env %>
+#   username: postgres
+#   encoding: utf8
 
 defaults: &defaults
+  adapter: sqlite3
+  database: filterrific_demo_<%= Rails.env %>
   pool: 5
   timeout: 5000
   host: localhost
-  <<: *<%= ENV['DB'] || "postgresql" %>
+  # <<: <%= ENV['DB'] || "postgresql" %>
 
 development:
   <<: *defaults
