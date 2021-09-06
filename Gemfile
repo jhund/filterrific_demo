@@ -17,7 +17,6 @@ gem "jbuilder", "~> 2.7"
 gem "filterrific"
 gem "jquery-rails"
 gem "sassc-rails"
-gem "standardrb"
 gem "bootsnap", ">= 1.4.4", require: false
 
 # Gems used only for assets and not required
