@@ -11,6 +11,7 @@ postgresql: &postgresql
   encoding: utf8
 
 defaults: &defaults
+  database: filterrific_demo_<%= Rails.env %>
   pool: 5
   timeout: 5000
   host: localhost
