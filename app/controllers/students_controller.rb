@@ -1,13 +1,12 @@
 class StudentsController < ApplicationController
-
   def index
     (@filterrific = initialize_filterrific(
       Student,
       params[:filterrific],
       select_options: {
         sorted_by: Student.options_for_sorted_by,
-        with_country_id: Country.options_for_select,
-      },
+        with_country_id: Country.options_for_select
+      }
     )) || return
     @students = @filterrific.find.page(params[:page])
 
@@ -16,5 +15,4 @@ class StudentsController < ApplicationController
       format.js
     end
   end
-
 end
