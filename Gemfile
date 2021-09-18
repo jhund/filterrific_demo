@@ -7,9 +7,8 @@ gem "rails", "~> 6.1.4", ">= 6.1.4.1"
 gem "pg"
 gem "puma", "~> 5.0"
 gem "haml-rails"
-gem "sqlite3"
 gem "webpacker", "~> 5.0"
-#gem "turbolinks", "~> 5"
+gem "turbolinks", "~> 5"
 gem "will_paginate"
 gem "will_paginate-bootstrap4"
 gem "jbuilder", "~> 2.7"
@@ -26,7 +25,8 @@ gem "coffee-rails" # specify in default group to avoid autoload warnings on test
 group :development, :test do
   # supported database adapters
   # gem 'pg' # already specified in default group higher up
-  #gem "mysql2"
+  # gem "mysql2"
+  gem "standard"
 end
 
 group :development do

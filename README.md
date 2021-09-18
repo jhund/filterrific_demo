@@ -1,9 +1,9 @@
-Filterrific Demo App (Rails 5.x branch)
+Filterrific Demo App (Rails 6.x branch)
 =======================================
 
 This is a demo Rails app for the Filterrific gem.
 
-* [Live demo](http://filterrific-demo.herokuapp.com)
+* [Live demo](https://filterrific-demo-6.herokuapp.com)
 * [Filterrific documentation](http://filterrific.clearcove.ca)
 
 It is also used for integration testing of Filterrific into different versions
@@ -22,4 +22,4 @@ app inside the Engine gem.
 
 ### Copyright
 
-Copyright (c) 2010 - 2019 Jo Hund. (MIT) LICENSE
+Copyright (c) 2010 - 2021 Jo Hund. (MIT) LICENSE
